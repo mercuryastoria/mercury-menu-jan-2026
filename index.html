@@ -3,316 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#1A1B41"> <title>Mercury Apothecary | The Menu</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Mercury Apothecary Menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     
     <style>
-        :root {
-            --deep-indigo: #12132b;
-            --cosmic-purple: #1A1B41;
-            --gold-foil: #D4AF37;
-            --gold-dim: #997f29;
-            --stardust: #F8F8F8;
-            --silver: #A5A9B4;
-            --glass-bg: rgba(20, 21, 35, 0.85);
-        }
-
+        /* RESET & BASICS */
+        * { box-sizing: border-box; }
+        
         body {
-            font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, var(--deep-indigo) 0%, #2a1f3d 100%);
-            color: var(--stardust);
             margin: 0;
             padding: 0;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 0 0 80px 0; /* Padding bottom for sticky button */
-        }
-
-        /* --- HERO SECTION --- */
-        header {
+            background-color: #1A1B41; /* Deep Indigo Background */
+            font-family: 'Montserrat', sans-serif;
+            color: #FFFFFF; /* FORCE WHITE TEXT */
             text-align: center;
-            padding: 40px 20px 30px;
-            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            padding-bottom: 100px; /* Space for button */
+        }
+
+        /* HEADER */
+        header {
+            border-bottom: 1px solid #D4AF37; /* Gold Line */
+            padding-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         .logo {
-            width: 120px;
-            height: auto;
-            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
-            margin-bottom: 15px;
+            max-width: 100px;
+            display: block;
+            margin: 0 auto 15px auto;
         }
 
         h1 {
             font-family: 'Cinzel Decorative', serif;
-            color: var(--gold-foil);
-            font-size: 2.2rem;
-            margin: 0;
-            line-height: 1.1;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .tagline-box {
-            margin-top: 20px;
-            border-top: 1px solid rgba(212, 175, 55, 0.3);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 15px 0;
+            color: #D4AF37; /* Gold Text */
+            font-size: 32px;
+            margin: 10px 0;
+            text-transform: uppercase;
         }
 
         .slogan {
-            font-size: 0.85rem;
-            color: var(--silver);
+            font-size: 14px;
+            color: #E0E0E0; /* Light Grey */
             font-style: italic;
-            line-height: 1.6;
-            max-width: 90%;
-            margin: 0 auto;
+            line-height: 1.5;
         }
 
-        /* --- MENU SECTIONS --- */
+        /* MENU SECTIONS */
         .menu-section {
-            background-color: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            margin: 15px;
-            padding: 25px 20px;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.05);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-        }
-
-        .category-title {
-            font-family: 'Cinzel Decorative', serif;
-            color: var(--gold-foil);
-            font-size: 1.4rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border-bottom: 1px solid var(--gold-dim);
-            padding-bottom: 8px;
+            background-color: rgba(255, 255, 255, 0.1); /* Slight white tint */
             margin-bottom: 20px;
-            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #444;
         }
 
-        /* --- MENU ITEM ROW --- */
+        h2 {
+            font-family: 'Cinzel Decorative', serif;
+            color: #D4AF37; /* Gold */
+            font-size: 20px;
+            border-bottom: 1px dashed #777;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+
         .item-row {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 12px;
-        }
-
-        .item-info {
-            flex: 1;
-            display: flex;
-            align-items: baseline;
-            overflow: hidden;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px dotted #555;
+            text-align: left;
         }
 
         .item-name {
-            font-weight: 500;
-            font-size: 1rem;
-            white-space: nowrap;
-            color: var(--stardust);
-        }
-
-        .item-dots {
-            flex: 1;
-            border-bottom: 1px dotted rgba(165, 169, 180, 0.3);
-            margin: 0 8px;
-            position: relative;
-            top: -5px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #fff;
         }
 
         .item-price {
-            font-size: 0.85rem;
-            color: var(--gold-foil);
-            font-weight: 600;
-            background: rgba(212, 175, 55, 0.1);
-            padding: 2px 8px;
-            border-radius: 4px;
-            white-space: nowrap;
+            color: #D4AF37; /* Gold */
+            font-weight: bold;
+            font-size: 14px;
         }
 
-        .item-sub {
-            display: block;
-            font-size: 0.75rem;
-            color: var(--silver);
-            margin-top: -8px;
-            margin-bottom: 12px;
-        }
-
-        /* --- STICKY BUTTON --- */
-        .sticky-footer {
+        /* FOOTER & BUTTON */
+        .sticky-btn-container {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            background: linear-gradient(to top, #12132b 90%, transparent);
-            padding: 20px 0 30px;
-            text-align: center;
-            z-index: 100;
+            background-color: #1A1B41;
+            padding: 20px;
+            border-top: 1px solid #D4AF37;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
         }
 
         .order-btn {
-            background: linear-gradient(90deg, #D4AF37 0%, #F2C94C 100%);
-            color: var(--deep-indigo);
-            font-family: 'Cinzel Decorative', serif;
-            font-weight: 900;
-            font-size: 1.1rem;
-            padding: 16px 40px;
-            border-radius: 50px;
+            display: block;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #D4AF37; /* Gold Button */
+            color: #1A1B41; /* Dark Text */
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
             text-decoration: none;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
-            transition: transform 0.2s;
+            border-radius: 50px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            display: inline-block;
-        }
-
-        .order-btn:active {
-            transform: scale(0.95);
+            font-family: 'Cinzel Decorative', serif;
         }
 
         footer {
-            text-align: center;
-            font-size: 0.7rem;
-            color: #555;
-            padding-bottom: 120px; /* Space for sticky button */
+            font-size: 12px;
+            color: #888;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
+        
         <header>
-            <img src="CosmicHead.png" alt="Mercury Apothecary" class="logo">
-            <h1>Mercury<br>Apothecary</h1>
-            <div class="tagline-box">
-                <p class="slogan">
-                    Sourced directly so we can better serve you. A curated collection of the finest consumables for all your needs. 
-                    Wide range of mind-expanding products. Discreet delivery direct to you.<br><br>
-                    <strong>EST. 2012</strong>
-                </p>
-            </div>
+            <img src="CosmicHead.png" alt="Mercury Logo" class="logo"> 
+            <h1>Mercury Astoria</h1>
+            <p class="slogan">
+                Sourced directly. Curated collection. Mind expanding. <br>
+                <strong>Since 2012</strong>
+            </p>
         </header>
 
-        <section class="menu-section">
-            <h2 class="category-title">Flower & Rosin</h2>
-            
-            <div class="item-row">
-                <div class="item-info"><span class="item-name">Mint Jelly</span><span class="item-dots"></span></div>
-                <span class="item-price">Inquire</span>
-            </div>
-            <span class="item-sub">Sativa Dominant Hybrid</span>
+        <div class="menu-section">
+            <h2>Flower & Rosin</h2>
+            <div class="item-row"><span class="item-name">Mint Jelly</span> <span class="item-price">Inquire</span></div>
+            <div class="item-row"><span class="item-name">Gas Face</span> <span class="item-price">Inquire</span></div>
+            <div class="item-row"><span class="item-name">Jungle Juice</span> <span class="item-price">Inquire</span></div>
+            <div class="item-row"><span class="item-name">Live Rosin Cart (1g)</span> <span class="item-price">Inquire</span></div>
+        </div>
 
-            <div class="item-row">
-                <div class="item-info"><span class="item-name">Gas Face</span><span class="item-dots"></span></div>
-                <span class="item-price">Inquire</span>
-            </div>
-            <span class="item-sub">Premium Sativa</span>
+        <div class="menu-section">
+            <h2>Mycology</h2>
+            <div class="item-row"><span class="item-name">Enigma</span> <span class="item-price">Inquire</span></div>
+            <div class="item-row"><span class="item-name">White Yeti</span> <span class="item-price">Inquire</span></div>
+            <div class="item-row"><span class="item-name">Microdose Caps</span> <span class="item-price">Inquire</span></div>
+        </div>
 
-            <div class="item-row">
-                <div class="item-info"><span class="item-name">Jungle Juice</span><span class="item-dots"></span></div>
-                <span class="item-price">Inquire</span>
-            </div>
-            <span class="item-sub">Heavy Indica</span>
+        <div class="menu-section">
+            <h2>Edibles & Tinctures</h2>
+            <div class="item-row"><span class="item-name">Zillas Gummies</span> <span class="item-price">Inquire</span></div>
+            <div class="item-row"><span class="item-name">THC Pixie Sticks</span> <span class="item-price">Inquire</span></div>
+            <div class="item-row"><span class="item-name">MCT Tincture</span> <span class="item-price">Inquire</span></div>
+        </div>
 
-            <div class="item-row">
-                <div class="item-info"><span class="item-name">Live Rosin Cart (1g)</span><span class="item-dots"></span></div>
-                <span class="item-price">Inquire</span>
-            </div>
-            <span class="item-sub">Spiritual Farms</span>
-        </section>
+        <div class="menu-section">
+            <h2>The Vault</h2>
+            <div class="item-row"><span class="item-name">Ketamine / MDMA</span> <span class="item-price">Inquire</span></div>
+            <div class="item-row"><span class="item-name">2CB / Blotter</span> <span class="item-price">Inquire</span></div>
+            <div class="item-row"><span class="item-name">Moon Rocks</span> <span class="item-price">Inquire</span></div>
+            <div class="item-row"><span class="item-name">Cocaine</span> <span class="item-price">Inquire</span></div>
+        </div>
 
-        <section class="menu-section">
-            <h2 class="category-title">Mycology</h2>
-            
-            <div class="item-row">
-                <div class="item-info"><span class="item-name">Enigma</span><span class="item-dots"></span></div>
-                <span class="item-price">Inquire</span>
-            </div>
-            <div class="item-row">
-                <div class="item-info"><span class="item-name">White Yeti</span><span class="item-dots"></span></div>
-                <span class="item-price">Inquire</span>
-            </div>
-            <div class="item-row">
-                <div class="item-info"><span class="item-name">Thrasher</span><span class="item-dots"></span></div>
-                <span class="item-price">Inquire</span>
-            </div>
-            <div class="item-row">
-                <div class="item-info"><span class="item-name">Microdose Caps</span><span class="item-dots"></span></div>
-                <span class="item-price">Inquire</span>
-            </div>
-            <span class="item-sub">Blend / Plain</span>
-        </section>
-
-        <section class="menu-section">
-            <h2 class="category-title">Edibles & Tinctures</h2>
-            
-            <div class="item-row">
-                <div class="item-info"><span class="item-name">Zillas Gummies</span><span class="item-dots"></span></div>
-                <span class="item-price">Inquire</span>
-            </div>
-            <span class="item-sub">125mg / 300mg Options</span>
-
-            <div class="item-row">
-                <div class="item-info"><span class="item-name">THC Pixie Sticks</span><span class="item-dots"></span></div>
-                <span class="item-price">Inquire</span>
-            </div>
-
-            <div class="item-row">
-                <div class="item-info"><span class="item-name">MCT Tincture</span><span class="item-dots"></span></div>
-                <span class="item-price">Inquire</span>
-            </div>
-            <span class="item-sub">Mercury Apothecary House Brand</span>
-            
-            <div class="item-row">
-                <div class="item-info"><span class="item-name">Green Dragon</span><span class="item-dots"></span></div>
-                <span class="item-price">Inquire</span>
-            </div>
-        </section>
-
-        <section class="menu-section">
-            <h2 class="category-title">The Vault</h2>
-            
-            <div class="item-row">
-                <div class="item-info"><span class="item-name">Ketamine / MDMA</span><span class="item-dots"></span></div>
-                <span class="item-price">Inquire</span>
-            </div>
-            <div class="item-row">
-                <div class="item-info"><span class="item-name">2CB / Blotter</span><span class="item-dots"></span></div>
-                <span class="item-price">Inquire</span>
-            </div>
-            <div class="item-row">
-                <div class="item-info"><span class="item-name">Moon Rocks</span><span class="item-dots"></span></div>
-                <span class="item-price">Inquire</span>
-            </div>
-            <div class="item-row">
-                <div class="item-info"><span class="item-name">Spritz (Powder/Caps)</span><span class="item-dots"></span></div>
-                <span class="item-price">Inquire</span>
-            </div>
-             <div class="item-row">
-                <div class="item-info"><span class="item-name">Pressed Tesla</span><span class="item-dots"></span></div>
-                <span class="item-price">Inquire</span>
-            </div>
-             <div class="item-row">
-                <div class="item-info"><span class="item-name">Cocaine</span><span class="item-dots"></span></div>
-                <span class="item-price">Inquire</span>
-            </div>
-        </section>
-        
         <footer>
-            &copy; 2026 Mercury Apothecary<br>Dissociation Station
+            &copy; 2026 Mercury Apothecary
         </footer>
 
     </div>
 
-    <div class="sticky-footer">
-        <a href="https://wa.me/16462623624?text=Hello!%20I%20am%20looking%20at%20the%20Mercury%20Menu%20and%20interested%20in..." class="order-btn">
-            Initiate Order
+    <div class="sticky-btn-container">
+        <a href="https://wa.me/16462623624?text=Hello!%20I%20am%20viewing%20the%20Mercury%20Menu%20and%20interested%20in..." class="order-btn">
+            Place Order
         </a>
     </div>
 
