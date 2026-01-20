@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercury Astoria Menu - Dissociation Station</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-indigo: #1A1B41;
+            --shimmer-gold: #D4AF37;
+            --silver-accent: #A5A9B4;
+            --off-white: #F8F8F8;
+            --dark-gray: #333333;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--deep-indigo);
+            color: var(--off-white);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: var(--dark-gray); /* Darker background for content boxes */
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--shimmer-gold); /* Gold border for the main container */
+        }
+
+        header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--shimmer-gold);
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            max-width: 120px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-family: 'Cinzel Decorative', serif;
+            color: var(--shimmer-gold);
+            font-size: 2.8em;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+        }
+
+        h2 {
+            font-family: 'Cinzel Decorative', serif;
+            color: var(--shimmer-gold);
+            font-size: 1.8em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            text-align: center;
+            border-bottom: 1px dashed var(--silver-accent);
+            padding-bottom: 10px;
+        }
+        
+        .slogan {
+            color: var(--silver-accent);
+            font-size: 1.1em;
+            margin-top: 10px;
+            font-style: italic;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .menu-section {
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--silver-accent);
+        }
+
+        .menu-category {
+            font-family: 'Cinzel Decorative', serif;
+            color: var(--shimmer-gold);
+            font-size: 1.6em;
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-name {
+            font-weight: 700;
+            color: var(--off-white);
+            font-size: 1.1em;
+        }
+
+        .item-description {
+            color: var(--silver-accent);
+            font-size: 0.9em;
+            margin-top: 3px;
+        }
+
+        .item-price {
+            font-weight: 700;
+            color: var(--shimmer-gold);
+            font-size: 1.1em;
+        }
+
+        .order-btn {
+            display: block;
+            width: fit-content;
+            margin: 30px auto;
+            padding: 15px 30px;
+            background-color: var(--shimmer-gold);
+            color: var(--deep-indigo);
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.3em;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .order-btn:hover {
+            background-color: #f0e68c; /* Lighter gold on hover */
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            text-align: center;
+            padding-top: 30px;
+            color: var(--silver-accent);
+            font-size: 0.9em;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            margin-top: 40px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            .order-btn {
+                font-size: 1.1em;
+                padding: 12px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+            .item-name, .item-price {
+                font-size: 1em;
+            }
+            .item-description {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="CosmicHead.png" alt="Mercury Apothecary Cosmic Head Logo" class="logo">
+            <h1>MERCURY ASTORIA</h1>
+            <h2 style="color: var(--silver-accent); font-size: 1.4em;">MENU - Dissociation Station</h2>
+            <p class="slogan">
+                Sourced directly so we can better serve you. A curated collection of the finest consumables for all your needs. Wide range of mind-expanding and enhancing products. Discreet delivery direct to you. Since 2012.
+            </p>
+        </header>
+
+        <main>
+            <section class="menu-section">
+                <div class="menu-category">Cannabis</div>
+                <h3>Flower</h3>
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Mint Jelly</div>
+                        <div class="item-description">Sativa dominant hybrid</div>
+                    </div>
+                    <div class="item-price">Contact for Price</div>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Gas Face</div>
+                        <div class="item-description">Sativa</div>
+                    </div>
+                    <div class="item-price">Contact for Price</div>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Jungle Juice</div>
+                        <div class="item-description">Indica</div>
+                    </div>
+                    <div class="item-price">Contact for Price</div>
+                </div>
+                
+                <h3>Live Rosin Cart</h3>
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">1 Gram - Spiritual Farms</div>
+                    </div>
+                    <div class="item-price">Contact for Price</div>
+                </div>
+            </section>
+
+            <section class="menu-section">
+                <div class="menu-category">Mushrooms</div>
+                <h3>Fruit</h3>
+                <div class="menu-item">
+                    <div class="item-name">Enigma</div>
+                    <div class="item-price">Contact for Price</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">White Yeti</div>
+                    <div class="item-price">Contact for Price</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">Thrasher</div>
+                    <div class="item-price">Contact for Price</div>
+                </div>
+                
+                <h3>Microdosed Capsules</h3>
+                <div class="menu-item">
+                    <div class="item-name">Plain</div>
+                    <div class="item-price">Contact for Price</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">Blend</div>
+                    <div class="item-description">Blended with Lion's Mane and Cordyceps</div>
+                    <div class="item-price">Contact for Price</div>
+                </div>
+            </section>
+
+            <section class="menu-section">
+                <div class="menu-category">Consumables</div>
+                <h3>Gummies</h3>
+                <div class="menu-item">
+                    <div class="item-name">Zillas - 125mg</div>
+                    <div class="item-price">Contact for Price</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">Zillas - 300mg</div>
+                    <div class="item-price">Contact for Price</div>
+                </div>
+                
+                <h3>THC Pixie Sticks</h3>
+                <div class="menu-item">
+                    <div class="item-name">Contact for Price</div>
+                </div>
+
+                <h3>Cannabis Tincture</h3>
+                <div class="menu-item">
+                    <div class="item-name">MCT</div>
+                    <div class="item-price">Contact for Price</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">Green Dragon</div>
+                    <div class="item-price">Contact for Price</div>
+                </div>
+            </section>
+            
+            <section class="menu-section">
+                <div class="menu-category">Special Stuff</div>
+                <div class="menu-item">
+                    <div class="item-name">Ketamine</div>
+                    <div class="item-price">Contact for Price</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">MDMA</div>
+                    <div class="item-price">Contact for Price</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">Spritz Powder</div>
+                    <div class="item-price">Contact for Price</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">Moon Rocks</div>
+                    <div class="item-price">Contact for Price</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">Pressed Tesla</div>
+                    <div class="item-price">Contact for Price</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">Spritz Capsules</div>
+                    <div class="item-price">Contact for Price</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">Blotter</div>
+                    <div class="item-price">Contact for Price</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">2CB</div>
+                    <div class="item-price">Contact for Price</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">Cocaine</div>
+                    <div class="item-price">Contact for Price</div>
+                </div>
+            </section>
+
+            <a href="#" class="order-btn" id="orderNowButton">Place Your Order / Inquire</a>
+        </main>
+
+        <footer>
+            &copy; 2026 Mercury Apothecary | Alchemical Tradition meets Cosmic Clarity.
+        </footer>
+    </div>
+
+    <script>
+        // Placeholder for order button functionality
+        document.getElementById('orderNowButton').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            alert('Thank you for your interest! Please reach out to us for ordering options.');
+            // In a real scenario, you'd replace the alert with:
+            // window.location.href = 'mailto:your_email@example.com?subject=Mercury%20Order%20Inquiry';
+            // or a link to a secure contact form.
+        });
+    </script>
+</body>
+</html>
